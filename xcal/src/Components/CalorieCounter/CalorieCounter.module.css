@@ -1,0 +1,50 @@
+.container{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.addButton{
+    margin: 5px;
+    margin-top: 15px;
+    width: 41%;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    font-size: 15px;
+    padding: 7px;
+}
+.addButton:hover{
+    background-color: rgb(31, 41, 55);
+}
+
+.deleteButton{
+    margin: 5px;
+    margin-left: 50px;
+    width: 15%;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    font-size: 15px;
+    padding: 7px;
+}
+
+.deleteButton:hover{
+    background-color: rgb(31, 41, 55);
+}
+
+.inputText{
+    width: 40%;
+    border-radius: 0px;
+    border: solid black 1px;
+    padding: 7px;
+    font-size: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.up{
+    font-size: 30px;
+}

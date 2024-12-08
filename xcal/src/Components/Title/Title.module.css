@@ -1,0 +1,20 @@
+.container{
+    margin: auto;
+    width: 90%;
+    text-align: center;
+    height: 200px;
+}
+.under{
+    font-weight: 200;
+    font-size: 15px;
+    color: #b0b5b9;
+    position: relative;
+    bottom: 40px;
+}
+.xcal {
+    font-size: 50px;
+    margin: 10px;
+}
+p {
+    margin: 0px;
+}
