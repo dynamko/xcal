@@ -1,18 +1,16 @@
-import Button from './Components/Button/Button.jsx';
-import Header from './Components/Header/Header.jsx';
-import Footer from './Components/Footer/Footer.jsx';
-import Title from './Components/Title/Title.jsx';
-import CalorieCounter from './Components/CalorieCounter/CalorieCounter.jsx';
-import styles from './App.css'
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
+import Main from './Components/Main/Main';
+import { useOutlet } from 'react-router-dom';
 
 
 
 function App() {
+  const outlet = useOutlet()
   return (
-    <div className=''>
+    <div>
     <Header/>
-    <Title/>
-    <CalorieCounter/>
+      {outlet ? outlet : <Main/>}
     <Footer/>
     </div>
   );

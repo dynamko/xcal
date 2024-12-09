@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './CalorieCounter.module.css';
 import ProgressBar from '../ProgressBar/ProgressBar';
+import Title from '../Title/Title';
 
 function CalorieCounter(){
     
@@ -48,6 +49,8 @@ function CalorieCounter(){
         setKcalSum(temp)}, [meals])
 
     return(
+        <>
+        <Title/>
         <div className={styles.container}>
             <p className={styles.up}>enter your daily calorie limit</p>
             <input type='number'
@@ -89,6 +92,7 @@ function CalorieCounter(){
                 )}
             </ol>          
         </div>
+        </>
     );
 }
 

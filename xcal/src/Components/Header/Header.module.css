@@ -19,3 +19,11 @@
     width: 90%;
     border-bottom: solid black 1px;
 }
+
+a {
+    color: black;
+}
+
+.navButton{
+    float: right;
+}

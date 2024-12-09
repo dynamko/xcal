@@ -1,9 +1,0 @@
-@font-face{
-  font-family: SpaceGrotesk;
-  src: url(../public/SpaceGrotesk-VariableFont_wght.ttf);
-}
-
-* {
-  font-family: SpaceGrotesk;
-}
-
