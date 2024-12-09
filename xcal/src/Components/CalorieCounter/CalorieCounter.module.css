@@ -47,4 +47,15 @@
 
 .up{
     font-size: 30px;
+    margin-top: 50px;
+}
+.inputTextKcalMax {
+    width: 5%;
+    border-radius: 0px;
+    border: solid black 1px;
+    padding: 7px;
+    font-size: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 10px;
 }

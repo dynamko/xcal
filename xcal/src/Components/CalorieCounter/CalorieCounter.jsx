@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import styles from './CalorieCounter.module.css'
+import styles from './CalorieCounter.module.css';
+import ProgressBar from '../ProgressBar/ProgressBar';
 
 function CalorieCounter(){
-
+    
     const [meals, setMeals] = useState([]);
     const [newMeal, setNewMeal] = useState('');
     const [newCalories, setNewCalories] = useState('');
     const[kcalSum, setKcalSum] = useState(0);
+    const[kcalMax, setKcalMax] = useState(0);
+    
+    function handleKcalMax(event){
+        setKcalMax(event.target.valueAsNumber);
+    }
 
     function handleMealInputChange(event){
         setNewMeal(event.target.value);
@@ -43,7 +49,17 @@ function CalorieCounter(){
 
     return(
         <div className={styles.container}>
-
+            <p className={styles.up}>enter your daily calorie limit</p>
+            <input type='number'
+            className={styles.inputTextKcalMax}
+            value={kcalMax}
+            onChange={handleKcalMax}
+            onInput={(e) => e.target.value = e.target.value.slice(0, 4)}
+            max={9999}
+            min={0}
+            />
+            <br></br>
+            <ProgressBar kcalSum={kcalSum} kcalMax={kcalMax}/>
             <p className={styles.up}>type in your meal !</p>
             <br></br>
             <input type='text'
@@ -71,9 +87,7 @@ function CalorieCounter(){
                         <button className={styles.deleteButton} onClick={() => deleteMeal(meal.id)}>delete</button>
                     </li>
                 )}
-            </ol>
-
-            <span>total kcal: {kcalSum}</span>
+            </ol>          
         </div>
     );
 }
