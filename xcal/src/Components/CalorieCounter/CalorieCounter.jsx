@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './CalorieCounter.module.css'
 
 function CalorieCounter(){
@@ -6,19 +6,19 @@ function CalorieCounter(){
     const [meals, setMeals] = useState([]);
     const [newMeal, setNewMeal] = useState('');
     const [newCalories, setNewCalories] = useState('');
-    const[kcalSum, setKcalSum] = useState('');
+    const[kcalSum, setKcalSum] = useState(0);
 
     function handleMealInputChange(event){
         setNewMeal(event.target.value);
     }
 
     function handleCaloriesInputChange(event){
-        setNewCalories(event.target.value);
+        setNewCalories(event.target.valueAsNumber);
     }
 
     function addMeal(){
 
-        if(newMeal.trim() !== "" && newCalories.trim() !== ""){
+        if(newMeal.trim() !== ""){
 
             setMeals(m => [...m,
             { name: newMeal, calories: newCalories, id: new Date().getTime() }
@@ -26,7 +26,6 @@ function CalorieCounter(){
 
             setNewMeal("");
             setNewCalories("");
-
         }
     }
 
@@ -36,7 +35,11 @@ function CalorieCounter(){
 
     }
 
+    useEffect(() => {let temp = 0; 
+        
+        meals.map((meal) => temp += meal.calories)
 
+        setKcalSum(temp)}, [meals])
 
     return(
         <div className={styles.container}>
@@ -70,6 +73,7 @@ function CalorieCounter(){
                 )}
             </ol>
 
+            <span>total kcal: {kcalSum}</span>
         </div>
     );
 }
